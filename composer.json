@@ -1,0 +1,9 @@
+{
+    "name": "newcity/acf-monolith-fields",
+    "type": "wordpress-plugin",
+    "version": "1.0-alpha",
+    "require": {
+        "composer/installers": "v1.3.0",
+        "php": ">=5.4.0"
+    }
+}
