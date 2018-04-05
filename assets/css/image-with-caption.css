@@ -1,0 +1,40 @@
+.acf-field-image-with-caption .acf-fields.-top .acf-field-image .description__columns {
+    display: block;
+    columns: 2;
+}
+
+@media screen and (max-width: 850px ) and (min-width: 680px) {
+    .acf-field-image-with-caption .acf-fields.-top {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .acf-field-image-with-caption .acf-field-image {
+        grid-row: 1 / 3;
+    }
+
+
+    .acf-field-image-with-caption .acf-field-headline,
+    .acf-field-image-with-caption .acf-field-caption,
+    .acf-field-image-with-caption .acf-field-credit {
+        grid-column: 2 / 2;
+    }
+}
+
+@media screen and (min-width: 1200px ) {
+    .acf-field-image-with-caption .acf-fields.-top {
+        display: grid;
+        grid-template-columns: minmax(50%, 320px) (50%, 1fr);
+    }
+
+    .acf-field-image-with-caption .acf-field-image {
+        grid-row: 1 / 3;
+    }
+
+
+    .acf-field-image-with-caption .acf-field-headline,
+    .acf-field-image-with-caption .acf-field-caption,
+    .acf-field-image-with-caption .acf-field-credit {
+        grid-column: 2 / 2;
+    }
+}
