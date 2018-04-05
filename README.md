@@ -1,5 +1,15 @@
-# ACF Headline Group Field
+# ACF Monolith Custom Fields
 
-Welcome to the Advanced Custom Fields Headline Group repository on Github.
+Currently contains two field types:
 
-EXTENDED_DESCRIPTION
+### Headline Group
+A collection of text fields: superhead, headline, and subhead, returned as an ACF group object.
+Superhead and subhead can be toggled on or off when adding this field type to an ACF field group.
+
+### Image with Caption
+Collection of the following fields:
+
+- Image (ACF image selector)
+- Headline (text)
+- Caption (wysiwyg)
+- Credit (text)
