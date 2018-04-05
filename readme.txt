@@ -1,23 +1,19 @@
-=== Advanced Custom Fields: Headline Group Field ===
-Contributors: AUTHOR_NAME
-Tags: PLUGIN_TAGS
+=== Advanced Custom Fields: Monolith Fields ===
+Contributors: Jesse Janowiak, NewCity
+Tags: Advanced Custom Fields, ACF
 Requires at least: 3.6.0
 Tested up to: 4.9.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SHORT_DESCRIPTION
+Adds a number of custom, reusable field type to ACF that are commonly needed in Monolith framework projects.
 
-== Description ==
-
-EXTENDED_DESCRIPTION
 
 = Compatibility =
 
 This ACF field type is compatible with:
 * ACF 5
-* ACF 4
 
 == Installation ==
 
