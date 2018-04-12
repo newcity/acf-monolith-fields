@@ -26,3 +26,8 @@ This ACF field type is compatible with:
 
 = 1.0.0 =
 * Initial Release.
+
+= 1.1.0 =
+* Changed field ids in `image with caption` type from `image` and `credit` to `imgsrc` and `citation` to
+better match monolith component variable names (breaks backwards compatibility).
+* Changed category for headline group from "monolith" to "content"
