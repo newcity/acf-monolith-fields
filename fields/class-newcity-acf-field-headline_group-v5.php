@@ -66,7 +66,7 @@ class newcity_acf_field_headline_group extends acf_field {
 		*  category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
 		*/
 		
-		$this->category = 'Monolith';
+		$this->category = 'content';
 		
 		
 		/*
