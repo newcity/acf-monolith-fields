@@ -16,7 +16,7 @@
 
     .acf-field-image-with-caption .acf-field-headline,
     .acf-field-image-with-caption .acf-field-caption,
-    .acf-field-image-with-caption .acf-field-credit {
+    .acf-field-image-with-caption .acf-field-citation {
         grid-column: 2 / 2;
     }
 }
@@ -34,7 +34,7 @@
 
     .acf-field-image-with-caption .acf-field-headline,
     .acf-field-image-with-caption .acf-field-caption,
-    .acf-field-image-with-caption .acf-field-credit {
+    .acf-field-image-with-caption .acf-field-citation {
         grid-column: 2 / 2;
     }
 }

@@ -140,7 +140,7 @@ class newcity_acf_field_image_with_caption extends acf_field {
 
 		$this->fields = array(
 			array(
-				'name' => 'image',
+				'name' => 'imgsrc',
                 'label' => 'Choose Image',
                 'type' => 'image'
 			),
@@ -154,7 +154,7 @@ class newcity_acf_field_image_with_caption extends acf_field {
                 'type' => 'wysiwyg'
             ),
             array(
-                'name' => 'credit',
+                'name' => 'citation',
                 'label' => 'Image Credit'
             )
 		);
