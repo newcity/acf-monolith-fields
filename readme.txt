@@ -31,3 +31,11 @@ This ACF field type is compatible with:
 * Changed field ids in `image with caption` type from `image` and `credit` to `imgsrc` and `citation` to
 better match monolith component variable names (breaks backwards compatibility).
 * Changed category for headline group from "monolith" to "content"
+
+= 1.1.1-alpha =
+NEW FEATURES
+* Added customizable values for Minimum and Maximum height, width, and file size on image field
+* Moved both field types into the new "Monolith" category
+
+FIXES
+* Toggle for Image Caption credit field was not working
