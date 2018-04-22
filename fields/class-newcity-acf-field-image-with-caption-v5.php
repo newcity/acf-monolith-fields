@@ -172,7 +172,7 @@ class newcity_acf_field_image_with_caption extends acf_field {
 		*  category (string) basic | content | choice | relational | jquery | layout | CUSTOM GROUP NAME
 		*/
 		
-		$this->category = 'content';
+		$this->category = 'Monolith';
 		
 		
 		/*
