@@ -98,6 +98,7 @@ class newcity_acf_field_image_with_caption extends acf_field {
 
 	function has_dimension_settings( $image_settings ) {
 		foreach ($this->dimension_keys as $key => $values ) {
+			xdebug_break();
 			if ( !empty( $image_settings[$key] ) ) {
 				return true;
 			}
@@ -180,7 +181,7 @@ class newcity_acf_field_image_with_caption extends acf_field {
 		
 		$this->defaults = array(
 			'show_headline' => true,
-			'show_credit' => true,
+			'show_citation' => true,
 			'sub_fields'	=> array(),
 			'layout'		=> 'block',
 			'sub_fields'	=> array(),
@@ -279,18 +280,18 @@ class newcity_acf_field_image_with_caption extends acf_field {
 		*/
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Show Headline','acf-monolith'),
-			'instructions'	=> __('Does this caption include a separate headline?','acf-monolith'),
+			'label'			=> __('Show Headline Field','acf-monolith'),
+			'instructions'	=> __('Can this caption include a separate headline?','acf-monolith'),
 			'type'			=> 'true_false',
 			'name'			=> 'show_headline',
 			'ui'			=> 1,
         ));
         
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Show Image Credit','acf-monolith'),
-			'instructions'	=> __('Does this caption include a credit for the image?','acf-monolith'),
+			'label'			=> __('Show Image Credit Field','acf-monolith'),
+			'instructions'	=> __('Can this caption include a credit for the image?','acf-monolith'),
 			'type'			=> 'true_false',
-			'name'			=> 'show_credit',
+			'name'			=> 'show_citation',
 			'ui'			=> 1,
 		));
 		
@@ -308,6 +309,75 @@ class newcity_acf_field_image_with_caption extends acf_field {
 				'row'			=> __('Row','acf')
 			)
 		));
+
+		// Sizes (copied from default ACF Image field)
+		// min
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Minimum','acf'),
+			'instructions'	=> __('Restrict which images can be uploaded','acf'),
+			'type'			=> 'text',
+			'name'			=> 'min_width',
+			'prepend'		=> __('Width', 'acf'),
+			'append'		=> 'px',
+		));
+		
+		acf_render_field_setting( $field, array(
+			'label'			=> '',
+			'type'			=> 'text',
+			'name'			=> 'min_height',
+			'prepend'		=> __('Height', 'acf'),
+			'append'		=> 'px',
+			'_append' 		=> 'min_width'
+		));
+		
+		acf_render_field_setting( $field, array(
+			'label'			=> '',
+			'type'			=> 'text',
+			'name'			=> 'min_size',
+			'prepend'		=> __('File size', 'acf'),
+			'append'		=> 'MB',
+			'_append' 		=> 'min_width'
+		));	
+		
+		
+		// max
+		acf_render_field_setting( $field, array(
+			'label'			=> __('Maximum','acf'),
+			'instructions'	=> __('Restrict which images can be uploaded','acf'),
+			'type'			=> 'text',
+			'name'			=> 'max_width',
+			'prepend'		=> __('Width', 'acf'),
+			'append'		=> 'px',
+		));
+		
+		acf_render_field_setting( $field, array(
+			'label'			=> '',
+			'type'			=> 'text',
+			'name'			=> 'max_height',
+			'prepend'		=> __('Height', 'acf'),
+			'append'		=> 'px',
+			'_append' 		=> 'max_width'
+		));
+		
+		acf_render_field_setting( $field, array(
+			'label'			=> '',
+			'type'			=> 'text',
+			'name'			=> 'max_size',
+			'prepend'		=> __('File size', 'acf'),
+			'append'		=> 'MB',
+			'_append' 		=> 'max_width'
+		));	
+		
+		
+		// allowed type -- commented out, since allowing anything other than the defaults (jpg, jpeg, png)
+		// is highly discouraged
+		// acf_render_field_setting( $field, array(
+		// 	'label'			=> __('Allowed file types','acf'),
+		// 	'instructions'	=> __('Comma separated list. Leave blank for all types','acf'),
+		// 	'type'			=> 'text',
+		// 	'name'			=> 'mime_types',
+		// ));
+
 
 	}
 	
@@ -351,9 +421,15 @@ class newcity_acf_field_image_with_caption extends acf_field {
 				$field_type = array_key_exists( 'type', $sub_field ) ? $sub_field['type'] : 'text';
 				$field_type = array_key_exists( $field_type, $this->field_defaults ) ? $field_type : 'text';
 
-				
+				foreach ( $this->dimension_keys as $key => $value ) {
+					if ( !empty($field[$key]) ) {
+						$sub_field[$key] = $field[$key];
+					}
+				}
+
 				$merged_field = array_merge( $this->field_defaults[$field_type], $sub_field, $field_ids );
 				if ( $field_type == 'image' ) {
+
 					$merged_field['instructions'] = $this->set_image_instructions( $merged_field );
 				}
 				$sub_fields[] = $merged_field;
