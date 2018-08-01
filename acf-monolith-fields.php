@@ -74,7 +74,7 @@ class newcity_acf_monolith {
 		
 		// include
 		include_once('fields/class-newcity-acf-field-headline_group-v' . $version . '.php');
-		include_once('fields/class-newcity-acf-field-image-with-caption-v' . $version . '.php');
+		// include_once('fields/class-newcity-acf-field-image-with-caption-v' . $version . '.php');
 	}
 	
 }
