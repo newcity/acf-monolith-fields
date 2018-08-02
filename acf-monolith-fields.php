@@ -4,7 +4,7 @@
 Plugin Name: Advanced Custom Fields: Monolith Field Types
 Plugin URI: https://github.com/newcity
 Description: Reusable ACF field groups corresponding to common Monlith patterns
-Version: 1.1.1-alpha
+Version: 1.2-alpha
 Author: Jesse Janowiak, NewCity
 Author URI: https://insidenewcity.com
 License: NONE
